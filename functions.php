@@ -6,7 +6,7 @@ register_nav_menus(array(
 	'top'    => 'Верхнее меню',    //Название месторасположения меню в шаблоне
 	'bottom' => 'Нижнее меню'      //Название другого месторасположения меню в шаблоне
 ));
-
+// Добавляем класс к ссылкам
 function add_menu_link_class( $atts, $item, $args ) {
 	if (property_exists($args, 'link_class')) {
 	  $atts['class'] = $args->link_class;
@@ -14,7 +14,7 @@ function add_menu_link_class( $atts, $item, $args ) {
 	return $atts;
   }
   add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );
-
+// Добавляем класс к li
   function add_menu_list_item_class($classes, $item, $args) {
 	 if (property_exists($args, 'list_item_class')) {
 	 $classes[] = $args->list_item_class;
